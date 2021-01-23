@@ -1,0 +1,564 @@
+html {
+  font-size: 80%;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Font Awesome 5 Free", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: "Font Awesome 5 Free", source-code-pro, Menlo, Monaco, Consolas,
+    "Courier New", monospace;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #f0c040;
+}
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.main {
+  flex: 3 60rem;
+}
+
+.sidebar {
+  flex: 1 20rem;
+}
+
+/* Courses*/
+
+.courses {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  height: auto;
+}
+
+.container-fluid {
+  overflow: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.container-fluid::-webkit-scrollbar {
+  display: none;
+}
+
+.grid-container {
+  padding-bottom: 10%;
+  box-sizing: content-box;
+}
+
+.courses li {
+  flex: 0 1 30rem;
+  padding-left: 5%;
+  padding-bottom: 5%;
+  max-width: 30%;
+}
+
+.course {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.myFooter {
+  z-index: 1;
+}
+
+.course img {
+  max-width: 100%;
+  max-height: 50%;
+  padding-top: 5%;
+}
+
+p {
+  width: 55%;
+  text-align: left;
+  margin: 0;
+}
+
+.course-price {
+  max-width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.course-price div,
+.course-price button {
+  text-align: center;
+  flex: 1;
+}
+
+.course-price div {
+  font-size: small;
+  font-weight: bold;
+  padding-right: 20%;
+}
+
+div#price-of-course {
+  width: 100%;
+}
+/* buy button */
+#add-button,
+#proceed-button {
+  box-shadow: inset 0 0 0 2px #58afd1;
+  color: #58afd1;
+  transition: color 0.25s 0.0833333333s;
+  position: relative;
+}
+
+#add-button::before,
+#proceed-button::before,
+#add-button::after,
+#proceed-button::after {
+  border: 0 solid transparent;
+  box-sizing: border-box;
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  width: 0;
+  height: 0;
+  bottom: 0;
+  right: 0;
+}
+#add-button::before,
+#proceed-button::before {
+  border-bottom-width: 2px;
+  border-left-width: 2px;
+}
+#add-button::after,
+#proceed-button::after {
+  border-top-width: 2px;
+  border-right-width: 2px;
+}
+#add-button:hover,
+#proceed-button:hover {
+  color: #6223f7;
+}
+#add-button:hover::before,
+#add-button:hover::after,
+#proceed-button:hover::before,
+#proceed-button:hover::after {
+  border-color: #6223f7;
+  transition: border-color 0s, width 0.25s, height 0.25s;
+  width: 100%;
+  height: 100%;
+}
+#add-button:hover::before,
+#proceed-button:hover::before {
+  transition-delay: 0s, 0s, 0.25s;
+}
+#add-button:hover::after,
+#proceed-button:hover::after {
+  transition-delay: 0s, 0.25s, 0s;
+}
+#add-button,
+#proceed-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  line-height: 1.5;
+  font-size: small;
+  padding: 0.5em 0.5em;
+  letter-spacing: 0.05rem;
+}
+#add-button:focus,
+#proceed-button:focus {
+  outline: none;
+}
+
+/* in cart button */
+#in-cart-course {
+  box-shadow: inset 0 0 0 2px #6223f7;
+  color: #6223f7;
+  transition: color 0.25s 0.0833333333s;
+  position: relative;
+  background-color: #f0f0f0;
+  cursor: default;
+  border: none;
+}
+/* bought button */
+#bought-course {
+  box-shadow: inset 0 0 0 2px #015e15;
+  color: #015e15;
+  transition: color 0.25s 0.0833333333s;
+  position: relative;
+  background-color: #f0f0f0;
+  cursor: default;
+  border: none;
+}
+
+/*remove button*/
+
+#remove-button {
+  box-shadow: inset 0 0 0 2px #606263;
+  color: #606263;
+  transition: color 0.25s 0.0833333333s;
+  position: relative;
+}
+
+#remove-button::before,
+#remove-button::after {
+  border: 0 solid transparent;
+  box-sizing: border-box;
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  width: 0;
+  height: 0;
+  bottom: 0;
+  right: 0;
+}
+#remove-button::before {
+  border-bottom-width: 2px;
+  border-left-width: 2px;
+}
+#remove-button::after {
+  border-top-width: 2px;
+  border-right-width: 2px;
+}
+#remove-button:hover {
+  color: crimson;
+}
+#remove-button:hover::before,
+#remove-button:hover::after {
+  border-color: crimson;
+  transition: border-color 0s, width 0.25s, height 0.25s;
+  width: 100%;
+  height: 100%;
+}
+#remove-button:hover::before {
+  transition-delay: 0s, 0s, 0.25s;
+}
+#remove-button:hover::after {
+  transition-delay: 0s, 0.25s, 0s;
+}
+#remove-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  line-height: 1.5;
+  font-size: small;
+  padding: 0.5em 0.5em;
+  letter-spacing: 0.05rem;
+}
+#remove-button:focus {
+  outline: none;
+}
+
+/* pay button */
+.btn-submit {
+  background: white;
+  box-shadow: inset 0 0 0 1px #1ecd97;
+  color: #1ecd97;
+  border: 0;
+  width: 100%;
+  height: 17%;
+  font-size: 80%;
+  border-radius: 100px;
+  transition: all 500ms cubic-bezier(0.23, 1, 0.32, 1);
+  outline: none;
+}
+.btn-submit:hover {
+  background: #1ecd97;
+  color: white;
+}
+
+/* pay button end */
+
+.filter,
+.cart-header {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  margin: 1rem;
+  border-bottom: 0.1rem #c0c0c0 solid;
+  font-size: 80%;
+  font-weight: bold;
+  font-family: "Font Awesome 5 Free", Arial, Helvetica, sans-serif;
+}
+
+.filter div {
+  flex: 1;
+}
+
+.search-label {
+  margin-right: 4rem;
+}
+
+.search-input {
+  margin-top: 0.5rem;
+  font-family: Helvetica, "FontAwesome", sans-serif;
+  width: 100%;
+  font-style: italic;
+  font-size: 80%;
+  color: #444;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.cart {
+  padding: 1rem;
+  margin: 1rem;
+  display: flex;
+}
+
+.cart-items {
+  padding: 0;
+  width: 100%;
+  list-style-type: none;
+  font-size: small;
+}
+
+.cart-items img {
+  width: 70%;
+  height: 70%;
+}
+
+.cart-items li {
+  display: flex;
+}
+.cart-items li div {
+  padding: 0.5rem;
+}
+
+.cart-items li div:last-child {
+  flex: 1;
+}
+
+.right {
+  text-align: right;
+}
+
+.total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  font-family: "Font Awesome 5 Free";
+  font-size: 100%;
+  font-weight: 900;
+}
+
+.total > div,
+.total > button {
+  flex: 1;
+}
+
+/* Course Details */
+
+.modal-dialog {
+  max-width: 50%;
+  pointer-events: all;
+  padding-left: 0;
+}
+
+img.course-detail-image {
+  max-width: 50%;
+  height: 50%;
+  margin: 0 auto;
+}
+
+.course-details {
+  /* display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-height: 96vh; */
+
+  background-color: white;
+  font-size: small;
+  width: 70%;
+  max-width: 640px;
+  height: 70%;
+  margin: auto;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+.course-details-description {
+  flex: 1 1;
+  margin: 1rem;
+}
+
+.course-details-description p {
+  width: 80%;
+  font-family: "Font Awesome 5 Free";
+  font-size: 100%;
+  padding-bottom: 0.5rem;
+}
+
+.close-modal,
+.close-modal-tutorial {
+  position: flex;
+  z-index: 1000;
+  color: red;
+  float: right;
+  font-size: 17px;
+  font-weight: bold;
+  border: 1px solid gray;
+  border-radius: 4px;
+}
+
+/* My courses */
+
+.myCourses-list {
+  list-style-type: none;
+  margin-right: 8%;
+  margin-bottom: 12%;
+}
+
+.wrapper {
+  display: inline-grid;
+  font-size: small;
+  /* grid-template-rows: [first] 1fr [second] 1fr [third] 1fr [forth] 1fr [fifth] 1fr [sixth] 1fr [seventh] 1fr [eigth] 1fr [ninth] 1fr [tenth] 1fr [eleven]; */
+  grid-template-columns: [first] 5fr [second] 10fr [third] 40fr [forth] 20fr [fifth] 10fr [sixth] 10fr [seventh] 5fr [last];
+  place-items: center stretch;
+  margin-bottom: 1%;
+  background-color: #eee;
+}
+
+.pic1 {
+  max-width: 70%;
+  max-height: 70%;
+  grid-column: 2 / 3;
+  margin: 10%;
+}
+
+.name1 {
+  grid-column: 3 / 4;
+  justify-self: center;
+}
+
+.teacher1 {
+  grid-column: 4 / 5;
+  color: black !important;
+}
+
+.time1 {
+  grid-column: 5 / 6;
+  color: black !important;
+}
+
+.complete1 {
+  grid-column: 6 / 7;
+  color: black !important;
+  width: 110%;
+}
+
+/* Start Course Modal */
+
+img#title-image {
+  padding: 0;
+  max-height: 25%;
+  max-width: 40%;
+}
+
+.section-list {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  /* flex-wrap: wrap; */
+  flex-direction: column;
+  justify-content: left;
+  border-top: 1px solid black;
+}
+
+.yt-link {
+  cursor: pointer;
+}
+
+.b-course {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  max-width: 46%;
+  max-height: 100%;
+  padding-right: 10px;
+  border-right: 1px solid black;
+}
+
+.video-box {
+  position: fixed;
+  right: 10%;
+}
+
+/* .date-20201208 {
+  position: flex !important;
+  justify-content: end !important;
+} */
+
+.ReactModal__Content {
+  padding: 10px !important;
+}
+
+.completion-status {
+  font-size: small;
+  color: #015e15;
+}
+
+.checkbox-inline {
+  font-size: x-small;
+  margin: 0;
+}
+
+/* Reports & PieChart */
+
+.chart-container {
+  height: 30%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;
+}
+
+.reports-title {
+  font-family: "Font Awesome 5 Free", helvetica;
+  font-weight: 900;
+  font-size: 100%;
+  color: black;
+}
+
+.report-selector {
+  margin-left: 25%;
+}
+
+.pie-title-users {
+  font-family: "Font Awesome 5 Free", helvetica;
+  font-weight: 900;
+  font-size: 90%;
+  color: black;
+  margin-left: 25% !important;
+}
+.pie-title-orders {
+  font-family: "Font Awesome 5 Free", helvetica;
+  font-weight: 900;
+  font-size: 90%;
+  color: black;
+  margin-left: 25% !important;
+}
+
+.pie-subtitles {
+  font-family: "Font Awesome 5 Free", helvetica;
+  font-weight: 900;
+  font-size: 90%;
+  color: black;
+  margin-left: 40% !important;
+}

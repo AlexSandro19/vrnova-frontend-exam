@@ -1,0 +1,99 @@
+label {
+  display: block;
+  margin-top: 10px;
+}
+
+.card-container.card {
+  max-width: 350px !important;
+  padding: 40px 40px;
+}
+
+/* Logo picture */
+img.d-inline-block {
+  height: 60px;
+  width: 100px;
+}
+
+nav.myFooter {
+  position: fixed;
+  bottom: 0;
+}
+
+html,
+body,
+.container,
+.main-container,
+div#root {
+  min-height: 100%;
+}
+
+div.container-fluid {
+  position: fixed;
+  height: 100%;
+}
+
+.container {
+  margin-left: 5%;
+}
+
+/* header menu links */
+.nav-item.upper-link {
+  padding-top: 2.8rem !important;
+}
+
+.card {
+  background-color: #f7f7f7;
+  padding: 20px 25px 30px;
+  margin: 0 auto 25px;
+  margin-top: 50px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+a.nav-link {
+  font-family: "Font Awesome 5 Free", helvetica;
+  font-weight: 900;
+  font-size: 80%;
+  color: black;
+  cursor: pointer;
+  background: linear-gradient(currentColor, currentColor) bottom / 0 0.1em
+    no-repeat;
+  transition: 0.5s background-size;
+}
+
+a.nav-link:hover {
+  color: #24b7f8;
+  /*  */
+  background-size: 100% 0.1em;
+}
+
+a.navbar {
+  background-color: white;
+}
+
+Tab.tabs {
+  font-size: 10%;
+}
+
+.nav-tabs > li.active > a {
+  color: #3c5a78;
+  font-size: 16px;
+}
+
+.profile-img-card {
+  width: 96px;
+  height: 50px;
+  margin: 0 auto 10px;
+  display: block;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}
+
+.col-md-8 {
+  padding-top: 8px;
+}
